@@ -23,13 +23,15 @@
           default = packages.all;
         };
 
-        devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            rust-analyzer
-            cargo
-            rustc
-            evcxr
-          ];
+        devShells = {
+          default = code.rustPkgs.workspaceShell {
+            packages = [
+              pkgs.rust-analyzer
+              pkgs.cargo
+              pkgs.rustc
+              pkgs.evcxr
+            ];
+          };
         };
       }
     );
