@@ -22,6 +22,15 @@
           };
           default = packages.all;
         };
+
+        devShell = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            rust-analyzer
+            cargo
+            rustc
+            evcxr
+          ];
+        };
       }
     );
 }
