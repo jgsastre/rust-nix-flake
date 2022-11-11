@@ -36,6 +36,6 @@ let
     });
   };
 in {
-  app = (rustPkgs.workspace.app {}).bin;
-  wasm = (rustPkgsWasm.workspace.wasm {}).out;
+  hello-world = (rustPkgs.workspace.hello-world {}).bin;
+  # wasm = (rustPkgsWasm.workspace.wasm {}).out;
 }

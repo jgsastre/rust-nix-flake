@@ -14,11 +14,11 @@
         code = pkgs.callPackage ./. { inherit nixpkgs system cargo2nix; };
       in rec {
         packages = {
-          app = code.app;
-          wasm = code.wasm;
+          hello-world = code.hello-world;
+#          wasm = code.wasm;
           all = pkgs.symlinkJoin {
             name = "all";
-            paths = with code; [ app wasm ];
+            paths = with code; [ hello-world ];
           };
           default = packages.all;
         };
