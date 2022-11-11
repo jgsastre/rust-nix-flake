@@ -36,6 +36,7 @@ let
     });
   };
 in {
+  inherit rustPkgs;
   hello-world = (rustPkgs.workspace.hello-world {}).bin;
   # wasm = (rustPkgsWasm.workspace.wasm {}).out;
 }
